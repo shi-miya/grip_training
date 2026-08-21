@@ -1,5 +1,1 @@
-const CACHE="grip-training-v3-cache";
-const ASSETS=["./","./index.html","./manifest.webmanifest","./icon-192.png","./icon-512.png"];
-self.addEventListener("install",e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS))));
-self.addEventListener("activate",e=>e.waitUntil(self.clients.claim()));
-self.addEventListener("fetch",e=>e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request).then(x=>{const copy=x.clone();caches.open(CACHE).then(c=>c.put(e.request,copy));return x}).catch(()=>caches.match("./")))));
+const C="grip-training-v4";const A=["./","./index.html","./manifest.webmanifest","./icon-192.png","./icon-512.png"];self.addEventListener("install",e=>e.waitUntil(caches.open(C).then(c=>c.addAll(A))));self.addEventListener("activate",e=>e.waitUntil(self.clients.claim()));self.addEventListener("fetch",e=>e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request))));
