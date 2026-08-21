@@ -1,44 +1,37 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#111827">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="握力トレーニング">
-<link rel="manifest" href="manifest.webmanifest">
-<link rel="apple-touch-icon" href="icon-192.png">
-<title>握力トレーニング</title>
+<!doctype html><html lang="ja"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#111827"><meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="握力トレーニング">
+<link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-192.png"><title>握力トレーニング</title>
 <style>
-*{box-sizing:border-box}body{margin:0;background:#f3f4f6;color:#111827;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;-webkit-tap-highlight-color:transparent}.app{max-width:520px;min-height:100vh;margin:0 auto;background:#fff;padding:22px 16px calc(28px + env(safe-area-inset-bottom))}h1{font-size:21px;margin:4px 4px 6px}.sub{color:#6b7280;font-size:13px;margin:0 4px 20px}.hands{display:grid;grid-template-columns:1fr 1fr;gap:10px}.hand{background:#f9fafb;border-radius:20px;padding:16px 12px 14px;border:1px solid #eef0f3}.hand-title{font-size:16px;font-weight:800;text-align:center;margin-bottom:8px}.today{text-align:center;font-size:38px;font-weight:800;line-height:1.1;letter-spacing:-1.5px}.unit{text-align:center;color:#6b7280;font-size:12px;margin-bottom:12px}.buttons{display:grid;grid-template-columns:1fr 1fr;gap:7px}button{border:0;border-radius:13px;min-height:48px;font-size:16px;font-weight:750;cursor:pointer;touch-action:manipulation}.plus{background:#111827;color:#fff}.plus.secondary{background:#374151}.input-row{display:flex;gap:6px;margin-top:8px}input{width:100%;min-width:0;min-height:48px;border:2px solid #e5e7eb;border-radius:13px;padding:0 9px;font-size:17px;outline:none}input:focus{border-color:#111827}.record{background:#e5e7eb;color:#111827;padding:0 10px;white-space:nowrap;font-size:14px}.message{min-height:20px;text-align:center;color:#6b7280;font-size:12px;margin-top:7px}.stats{margin-top:14px;background:#f9fafb;border-radius:20px;padding:16px}.stats-title{font-size:14px;font-weight:800;margin-bottom:10px}.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.stat{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:12px}.label{color:#6b7280;font-size:12px}.stat strong{display:block;font-size:22px;margin-top:4px}.streak{margin-top:10px;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:13px;text-align:center}.streak strong{font-size:27px}.streak span{color:#6b7280;font-size:13px;margin-left:4px}.reset{width:100%;min-height:44px;background:transparent;color:#9ca3af;font-size:12px;margin-top:8px}@media(max-width:360px){.hands{gap:7px}.hand{padding:14px 9px}.today{font-size:33px}button{font-size:14px}.record{padding:0 8px}}
-</style>
-</head>
-<body>
-<div class="app">
-<h1>💪 握力トレーニング</h1>
-<p class="sub">右手・左手を記録。両方やった日が継続日になります。</p>
+*{box-sizing:border-box}body{margin:0;background:#f3f4f6;color:#111827;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif}.app{max-width:520px;min-height:100vh;margin:auto;background:#fff;padding:20px 14px 32px}h1{font-size:21px;margin:4px}.sub{color:#6b7280;font-size:13px;margin:0 4px 15px}.hero{background:#111827;color:#fff;border-radius:22px;padding:18px 16px;margin-bottom:12px}.hero small{opacity:.8}.hero b{display:block;font-size:44px;line-height:1;margin:5px 0}.hero b span{font-size:18px;margin-left:4px}.goal,.panel{background:#f9fafb;border-radius:19px;padding:14px;margin:12px 0}.top{display:flex;justify-content:space-between;font-weight:800;font-size:14px}.bar{height:9px;background:#e5e7eb;border-radius:99px;overflow:hidden;margin:10px 0 6px}.bar i{display:block;height:100%;background:#111827;border-radius:99px}.goaltext{text-align:right;color:#6b7280;font-size:12px}.edit{display:flex;gap:7px;margin-top:9px}input{width:100%;min-width:0;min-height:46px;border:2px solid #e5e7eb;border-radius:12px;padding:0 8px;font-size:16px}button{border:0;border-radius:12px;min-height:46px;font-weight:800;touch-action:manipulation}.edit button{background:#111827;color:white;padding:0 14px}.hands{display:grid;grid-template-columns:1fr 1fr;gap:9px}.hand{background:#f9fafb;border:1px solid #eef0f3;border-radius:19px;padding:14px 10px}.ht{text-align:center;font-weight:800}.today{text-align:center;font-size:36px;font-weight:900;margin-top:6px}.unit{text-align:center;color:#6b7280;font-size:12px;margin-bottom:10px}.btns{display:grid;grid-template-columns:1fr 1fr;gap:6px}.plus{background:#111827;color:white}.plus2{background:#374151;color:white}.inputrow{display:flex;gap:5px;margin-top:7px}.record{background:#e5e7eb;padding:0 9px;font-size:13px}.msg{height:18px;text-align:center;color:#6b7280;font-size:11px}.bestgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.best{background:#fff;border:1px solid #e5e7eb;border-radius:13px;padding:11px}.label{color:#6b7280;font-size:11px}.best strong{display:block;font-size:21px;margin-top:3px}.tabs{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:9px}.tab{background:#e5e7eb;color:#374151;min-height:39px;font-size:13px}.tab.active{background:#111827;color:white}.chart{background:white;border:1px solid #e5e7eb;border-radius:14px;padding:10px 8px 6px}.ct{font-size:12px;color:#6b7280;margin-bottom:8px}.bars{height:150px;display:flex;align-items:flex-end;gap:3px}.col{flex:1;height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center}.pair{height:125px;width:100%;display:flex;align-items:flex-end;justify-content:center;gap:2px}.v{width:42%;max-width:16px;background:#111827;border-radius:4px 4px 0 0;min-height:2px}.v.left{opacity:.42}.dl{font-size:8px;color:#6b7280;margin-top:4px}.legend{text-align:center;color:#6b7280;font-size:10px;margin-top:7px}.reset{width:100%;background:transparent;color:#9ca3af;font-size:12px;margin-top:5px}
+</style></head><body><main class="app">
+<h1>💪 握力トレーニング</h1><p class="sub">右手・左手を記録。両方やった日が継続日になります。</p>
+<section class="hero"><small>🔥 現在の継続日数</small><b><span id="streak">0</span><span>日</span></b><small>右手・左手の両方をやった日</small></section>
+<section class="goal"><div class="top"><span>🎯 今日の目標</span><span id="goalValue">100回</span></div><div class="bar"><i id="goalBar"></i></div><div class="goaltext" id="goalProgress">0 / 100回</div><div class="edit"><input id="goalInput" type="number" inputmode="numeric" min="1" placeholder="目標回数"><button onclick="setGoal()">設定</button></div></section>
 <div class="hands">
-<section class="hand"><div class="hand-title">右手</div><div class="today" id="rightToday">0</div><div class="unit">回</div><div class="buttons"><button class="plus" onclick="add('right',1)">＋1</button><button class="plus secondary" onclick="add('right',10)">＋10</button></div><div class="input-row"><input id="rightInput" type="number" inputmode="numeric" min="1" placeholder="回数"><button class="record" onclick="recordInput('right')">記録</button></div><div class="message" id="rightMessage"></div></section>
-<section class="hand"><div class="hand-title">左手</div><div class="today" id="leftToday">0</div><div class="unit">回</div><div class="buttons"><button class="plus" onclick="add('left',1)">＋1</button><button class="plus secondary" onclick="add('left',10)">＋10</button></div><div class="input-row"><input id="leftInput" type="number" inputmode="numeric" min="1" placeholder="回数"><button class="record" onclick="recordInput('left')">記録</button></div><div class="message" id="leftMessage"></div></section>
-</div>
-<section class="stats"><div class="stats-title">累計</div><div class="stat-grid"><div class="stat"><div class="label">右手</div><strong><span id="rightTotal">0</span>回</strong></div><div class="stat"><div class="label">左手</div><strong><span id="leftTotal">0</span>回</strong></div></div><div class="streak"><strong id="streak">0</strong><span>日連続</span><div class="label" style="margin-top:4px">右手・左手の両方をやった日</div></div></section>
+<section class="hand"><div class="ht">右手</div><div class="today" id="rightToday">0</div><div class="unit">回</div><div class="btns"><button class="plus" onclick="add('right',1)">＋1</button><button class="plus2" onclick="add('right',10)">＋10</button></div><div class="inputrow"><input id="rightInput" type="number" inputmode="numeric" min="1" placeholder="回数"><button class="record" onclick="recordInput('right')">記録</button></div><div class="msg" id="rightMessage"></div></section>
+<section class="hand"><div class="ht">左手</div><div class="today" id="leftToday">0</div><div class="unit">回</div><div class="btns"><button class="plus" onclick="add('left',1)">＋1</button><button class="plus2" onclick="add('left',10)">＋10</button></div><div class="inputrow"><input id="leftInput" type="number" inputmode="numeric" min="1" placeholder="回数"><button class="record" onclick="recordInput('left')">記録</button></div><div class="msg" id="leftMessage"></div></section></div>
+<section class="panel"><b>🏆 自己最高記録</b><div class="bestgrid" style="margin-top:10px"><div class="best"><div class="label">右手・1日</div><strong><span id="rightBest">0</span>回</strong></div><div class="best"><div class="label">左手・1日</div><strong><span id="leftBest">0</span>回</strong></div></div></section>
+<section class="panel"><b>📊 トレーニング履歴</b><div class="tabs" style="margin-top:10px"><button id="weekTab" class="tab active" onclick="setChart('week')">週間</button><button id="monthTab" class="tab" onclick="setChart('month')">月間</button></div><div class="chart"><div class="ct" id="chartTitle">直近7日間</div><div class="bars" id="bars"></div><div class="legend">■ 右手　▰ 左手</div></div></section>
 <button class="reset" onclick="resetAll()">データをリセット</button>
-</div>
+</main>
 <script>
-const KEY="grip-training-v3";
-function load(){return JSON.parse(localStorage.getItem(KEY)||'{"days":{}}')}
+const KEY="grip-training-v4";let mode="week";
+function load(){let d=JSON.parse(localStorage.getItem(KEY)||"null");if(d)return d;let old=JSON.parse(localStorage.getItem("grip-training-v3")||'{"days":{}}');return{days:old.days||{},goal:100}}
 function save(d){localStorage.setItem(KEY,JSON.stringify(d))}
-function todayKey(){const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`}
-function add(hand,n){const d=load(),k=todayKey();if(!d.days[k])d.days[k]={right:0,left:0};d.days[k][hand]=(d.days[k][hand]||0)+n;save(d);render()}
-function recordInput(hand){const i=document.getElementById(hand+"Input"),n=Number(i.value);if(!Number.isInteger(n)||n<=0){showMessage(hand,"1以上の数字を入力してください");return}add(hand,n);i.value=""}
-function showMessage(hand,t){const e=document.getElementById(hand+"Message");e.textContent=t;setTimeout(()=>e.textContent="",1800)}
-function calcTotal(days,hand){return Object.values(days).reduce((s,d)=>s+(d[hand]||0),0)}
-function calcStreak(days){let c=0,d=new Date();while(true){const k=`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`,x=days[k];if(!x||!(x.right>0&&x.left>0))break;c++;d.setDate(d.getDate()-1)}return c}
-function render(){const d=load(),t=d.days[todayKey()]||{right:0,left:0};rightToday.textContent=(t.right||0).toLocaleString();leftToday.textContent=(t.left||0).toLocaleString();rightTotal.textContent=calcTotal(d.days,"right").toLocaleString();leftTotal.textContent=calcTotal(d.days,"left").toLocaleString();streak.textContent=calcStreak(d.days)}
-function resetAll(){if(confirm("右手・左手の記録をすべて削除しますか？")){localStorage.removeItem(KEY);render()}}
+function key(d){return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")}
+function today(){return key(new Date())}
+function add(h,n){let d=load(),k=today();d.days[k]??={right:0,left:0};d.days[k][h]=(d.days[k][h]||0)+n;save(d);render()}
+function recordInput(h){let e=document.getElementById(h+"Input"),n=Number(e.value);if(!Number.isInteger(n)||n<1){document.getElementById(h+"Message").textContent="1以上を入力";setTimeout(()=>document.getElementById(h+"Message").textContent="",1500);return}add(h,n);e.value=""}
+function setGoal(){let n=Number(goalInput.value);if(!Number.isInteger(n)||n<1)return;let d=load();d.goal=n;save(d);goalInput.value="";render()}
+function streak(days){let c=0,d=new Date();while(true){let x=days[key(d)];if(!x||!(x.right>0&&x.left>0))break;c++;d.setDate(d.getDate()-1)}return c}
+function best(days,h){return Math.max(0,...Object.values(days).map(x=>x[h]||0))}
+function data(days,count){let a=[],end=new Date();for(let i=count-1;i>=0;i--){let d=new Date(end);d.setDate(end.getDate()-i);let x=days[key(d)]||{};a.push({label:(d.getMonth()+1)+"/"+d.getDate(),right:x.right||0,left:x.left||0})}return a}
+function draw(days){let a=data(days,mode==="week"?7:30),m=Math.max(1,...a.map(x=>Math.max(x.right,x.left)));bars.innerHTML=a.map(x=>'<div class="col"><div class="pair"><i class="v left" style="height:'+Math.max(2,x.left/m*100)+'%"></i><i class="v" style="height:'+Math.max(2,x.right/m*100)+'%"></i></div><div class="dl">'+x.label+'</div></div>').join("");chartTitle.textContent=mode==="week"?"直近7日間":"直近30日間"}
+function setChart(m){mode=m;weekTab.classList.toggle("active",m==="week");monthTab.classList.toggle("active",m==="month");draw(load().days)}
+function render(){let d=load(),t=d.days[today()]||{right:0,left:0},g=d.goal||100,p=(t.right||0)+(t.left||0);rightToday.textContent=(t.right||0).toLocaleString();leftToday.textContent=(t.left||0).toLocaleString();streak.textContent=streak(d.days);rightBest.textContent=best(d.days,"right").toLocaleString();leftBest.textContent=best(d.days,"left").toLocaleString();goalValue.textContent=g.toLocaleString()+"回";goalProgress.textContent=p.toLocaleString()+" / "+g.toLocaleString()+"回";goalBar.style.width=Math.min(100,p/g*100)+"%";draw(d.days)}
+function resetAll(){if(confirm("記録と目標をすべて削除しますか？")){localStorage.removeItem(KEY);localStorage.removeItem("grip-training-v3");render()}}
 ["right","left"].forEach(h=>document.getElementById(h+"Input").addEventListener("keydown",e=>{if(e.key==="Enter")recordInput(h)}));render();
-if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}))}
-</script>
-</body>
-</html>
+if("serviceWorker"in navigator)addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));
+</script></body></html>
